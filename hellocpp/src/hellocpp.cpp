@@ -8,33 +8,73 @@
 
 #include <iostream>
 #include "testheader/test.h"
-#include "Stud.cpp"
-#include "com.stroustrup/print_entry.cpp"
-#include "com.stroustrup/count_mary.cpp"
-#include "com.stroustrup/count_various.cpp"
+#include "stud.cpp"
+#include "com.cplusplus/test_cplusplus.cpp"
+#include "com.stroustrup/test.cpp"
 
 using namespace std;
-
-static void basicIOTest();
-static void basicOjbTest();
-static void test_print_entry();
-static void test_count_mary();
-static void test_count_various();
+static void basic_test();
+static void testComCPlusPlus();
+static void testStroustrup();
 
 #define TEST_THIS  1
 int main() {
 	int flag = TEST_THIS;
 	if(flag == 1){
-		test_count_various();
+		//正在做的测试
+		testStroustrup();
 	}else{
-		test_count_mary();
-		basicIOTest();
-		basicOjbTest();
-		test_print_entry();
+		//2、接着测试过的
+		testComCPlusPlus();
+		//1、先测试过的
+		basic_test();
 	}
 }
 
-static void basicIOTest(){
+static void testStroustrup(){
+	Test t;
+	int swit = 1;
+	switch(swit){
+	case 1 :
+		t.test_chapter2();
+		break;
+	}
+}
+
+static void testComCPlusPlus(){
+	TestCPlus t;
+	int swit = 1;
+	swit = 2;
+	swit = 3;
+	swit = 4;
+	swit = 5;
+	switch(swit){
+	case 1 :
+		//cpp new的三种方式
+		t.test_dynamic();
+		break;
+	case 2 :
+		//class定义和实例方法实现分离，命名空间的使用
+		t.test_classes();
+		break;
+	case 3 :
+		//加号的重载, this, 及指针
+		t.test_classes1();
+		break;
+
+	case 4 :
+		//struct使用
+		t.test_structres();
+		break;
+	case 5 :
+		/*虚函数，纯虚函数*/
+		t.test_polymorphism();
+		break;
+	}
+}
+
+
+static void basic_test(){
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	test();
 
@@ -43,25 +83,10 @@ static void basicIOTest(){
 	s = sum(a, b);
 
 	cout << "a+b=" << s << endl;
+
+	Student st;
+	Student st1;
+	st.display();
+	st1.display();
 }
 
-static void basicOjbTest(){
-	Student s;
-	Student s1;
-	s.display();
-	s1.display();
-}
-
-static void test_print_entry(){
-	PrintEntry p;
-	p.print_entry_main();
-}
-
-static void test_count_mary(){
-	CountMary c;
-	c.f();
-}
-static void test_count_various(){
-	CountVarious c;
-	c.count_various_main();
-}

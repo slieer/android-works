@@ -17,6 +17,13 @@ struct Entry {
 	}
 };
 
+/*
+ * Lists are sequence containers
+ * that allow constant time insert and erase operations anywhere within the sequence,
+ * and iteration in both directions.
+ *
+ *
+ */
 class PrintEntry {
 private:
 	list<Entry> phone_book;
@@ -29,9 +36,10 @@ public :
 		phone_book.push_back(Entry("three",3));
 		phone_book.push_back(Entry("four",4));
 		phone_book.push_back(Entry("five",5));
-		Entry six("six",6);
 
 		print_entries();
+
+		Entry six("six",6);
 		f(six,phone_book.begin(),phone_book.begin());
 		print_entries();
 		print_entry("four");

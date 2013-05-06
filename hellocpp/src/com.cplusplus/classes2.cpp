@@ -39,8 +39,18 @@ CVector CVector::operator+(CVector param) {
 
 class CDummy {
 public:
+	CDummy();
+	CDummy(int);
 	int isitme(CDummy& param);
 };
+
+CDummy:: CDummy(){
+	cout << "default constructor" << endl;
+}
+
+CDummy::CDummy(int x){
+	cout << "next constructor, x is " << x << endl;
+}
 
 int CDummy::isitme(CDummy& param) {
 	if (&param == this)
@@ -49,17 +59,24 @@ int CDummy::isitme(CDummy& param) {
 		return false;
 }
 
-int classes_main() {
+int classes2_main() {
 	CVector a(3, 1);
 	CVector b(1, 2);
 	CVector c;
 	c = a + b;
-	cout << c.x << "," << c.y;
+	cout << c.x << "," << c.y << endl;
 
 	CDummy a1;
 	CDummy* b1 = &a1;
 	if (b1->isitme(a1))
-		cout << "yes, &a is b";
+		cout << "yes, &a is b" << endl;
+
+	CDummy b3(100);
+	CDummy *b2 = new CDummy(100);
+
+	if(! b3.isitme(*b2)){
+		cout << "not equals!" << endl;
+	}
 	return 0;
 }
 

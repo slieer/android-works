@@ -7,35 +7,41 @@
 
 // classes example
 #include <iostream>
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+
+namespace My {
 
 class CRectangle {
-    int x, y;
-  public:
-    CRectangle (int,int);
-    void set_values (int,int);
-    int area () {
-    	return (x*y);
-    }
+	int x, y;
+public:
+	CRectangle(){}
+	CRectangle(int, int);
+	void set_values(int, int);
+	int area() {
+		return (x * y);
+	}
 };
 
-CRectangle::CRectangle (int a, int b) {
-  x = a;
-  y = b;
+CRectangle::CRectangle(int a, int b) {
+	x = a;
+	y = b;
 }
 
-void CRectangle::set_values (int a, int b) {
-  x = a;
-  y = b;
+void CRectangle::set_values(int a, int b) {
+	x = a;
+	y = b;
 }
 
-
-int main () {
-  CRectangle rect;
-  rect.set_values (3,4);
-  cout << "area: " << rect.area();
-  return 0;
 }
 
+int classes_main_() {
+	 using namespace My;
 
+	CRectangle rect;
+	rect.set_values(3, 4);
+	cout << "area: " << rect.area() << endl;
+	return 0;
+}
 

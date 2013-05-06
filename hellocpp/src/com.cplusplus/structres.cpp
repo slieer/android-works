@@ -35,14 +35,15 @@ static int main_1_test() {
 	mine.title = "2001 A Space Odyssey";
 	mine.year = 1968;
 
+	cout << "My favorite movie is:\n ";
+	printmovie(mine);
+
 	cout << "Enter title: ";
 	getline(cin, yours.title);
 	cout << "Enter year: ";
 	getline(cin, mystr);
 	stringstream(mystr) >> yours.year;
 
-	cout << "My favorite movie is:\n ";
-	printmovie(mine);
 	cout << "And yours is:\n ";
 	printmovie(yours);
 	return 0;
