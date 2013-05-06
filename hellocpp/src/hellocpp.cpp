@@ -11,6 +11,7 @@
 #include "Stud.cpp"
 #include "com.stroustrup/print_entry.cpp"
 #include "com.stroustrup/count_mary.cpp"
+#include "com.stroustrup/count_various.cpp"
 
 using namespace std;
 
@@ -18,13 +19,15 @@ static void basicIOTest();
 static void basicOjbTest();
 static void test_print_entry();
 static void test_count_mary();
+static void test_count_various();
 
 #define TEST_THIS  1
 int main() {
 	int flag = TEST_THIS;
 	if(flag == 1){
-		test_count_mary();
+		test_count_various();
 	}else{
+		test_count_mary();
 		basicIOTest();
 		basicOjbTest();
 		test_print_entry();
@@ -57,4 +60,8 @@ static void test_print_entry(){
 static void test_count_mary(){
 	CountMary c;
 	c.f();
+}
+static void test_count_various(){
+	CountVarious c;
+	c.count_various_main();
 }

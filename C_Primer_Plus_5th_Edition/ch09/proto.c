@@ -4,7 +4,7 @@ int imax(int, int);        /* prototype */
 int main(void)
 {
     printf("The maximum of %d and %d is %d.\n",
-            3, 5, imax(3));
+            3, 5, imax(3, 2));
     printf("The maximum of %d and %d is %d.\n",
             3, 5, imax(3.0, 5.0));
     return 0;
