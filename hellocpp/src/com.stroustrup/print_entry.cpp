@@ -30,7 +30,7 @@ private:
 
 public :
 	void print_entry_main() {
-
+		//在list容器的末尾，添加元素
 		phone_book.push_back(Entry("one",1));
 		phone_book.push_back(Entry("two",2));
 		phone_book.push_back(Entry("three",3));
@@ -42,6 +42,7 @@ public :
 		Entry six("six",6);
 		f(six,phone_book.begin(),phone_book.begin());
 		print_entries();
+
 		print_entry("four");
 		print_entry("seven");
 		print_entry("three");

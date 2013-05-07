@@ -22,12 +22,15 @@ int array_main();
 class Test{
 public:
 	static void test_chapter2(){
+		// std::list 使用
 		PrintEntry p;
 		p.print_entry_main();
 
+		// 用std, 在字符串中查找字符
 		CountMary c;
 		c.f();
 
+		// 自定义类型，模板，
 		CountVarious count;
 		count.count_various_main();
 

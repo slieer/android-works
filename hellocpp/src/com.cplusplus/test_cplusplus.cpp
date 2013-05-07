@@ -11,7 +11,6 @@ int classes2_main();
 int polymorphism_main();
 void structres();
 
-using namespace std;
 class TestCPlus{
 public:
 	static void test_dynamic(){

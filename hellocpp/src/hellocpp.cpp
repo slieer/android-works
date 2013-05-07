@@ -38,6 +38,15 @@ static void testStroustrup(){
 	case 1 :
 		t.test_chapter2();
 		break;
+	case 2 :
+		t.test_chapter5();
+		break;
+	case 3 :
+		t.test_chapter6();
+		break;
+	case 4 :
+		t.test_chapter8();
+		break;
 	}
 }
 
