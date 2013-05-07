@@ -49,7 +49,11 @@ public:
 	}
 
 	static void test_Chapter11(){
+		//http://www.stroustrup.com/assoc.c
+		//[]重载
 		assoc_main();
+		//http://www.stroustrup.com/string_example.c
+		//友元(友元函数是指某些虽然不是类成员却能够访问类的所有成员的函数。)，内部类
 		string_example_main();
 	}
 
@@ -59,6 +63,7 @@ public:
 	}
 
 	static void test_AppendixC(){
+		//多维数组
 		array_main();
 	}
 };

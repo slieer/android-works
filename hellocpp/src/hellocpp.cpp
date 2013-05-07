@@ -11,19 +11,23 @@
 #include "stud.cpp"
 #include "com.cplusplus/test_cplusplus.cpp"
 #include "com.stroustrup/test.cpp"
+#include "container/container_test.cpp"
 
 using namespace std;
 static void basic_test();
 static void testComCPlusPlus();
 static void testStroustrup();
+static void testContainer();
 
 #define TEST_THIS  1
 int main() {
 	int flag = TEST_THIS;
 	if(flag == 1){
 		//正在做的测试
-		testStroustrup();
+		testContainer();
 	}else{
+		//3、
+		testStroustrup();
 		//2、接着测试过的
 		testComCPlusPlus();
 		//1、先测试过的
@@ -31,9 +35,15 @@ int main() {
 	}
 }
 
+static void testContainer(){
+	ContainerTest t;
+	t.test();
+}
+
 static void testStroustrup(){
 	Test t;
 	int swit = 1;
+	swit = 5;
 	switch(swit){
 	case 1 :
 		t.test_chapter2();
@@ -42,10 +52,21 @@ static void testStroustrup(){
 		t.test_chapter5();
 		break;
 	case 3 :
+		//四则运算字符串计算
 		t.test_chapter6();
 		break;
 	case 4 :
+		//dc namespace
 		t.test_chapter8();
+		break;
+	case 5 :
+		t.test_Chapter11();
+		break;
+	case 6 :
+		t.test_Chapter18();
+		break;
+	case 7 :
+		t.test_AppendixC();
 		break;
 	}
 }

@@ -45,7 +45,7 @@ static void m3(vector<int>& vi, list<int>& li)
 	cout << "m3: " << *p1.second << " " << *p1.first << endl;
 }
 
-void m4(vector<int>& vi, list<int>& li)	// revised example from _algo.pred_
+static void m4(vector<int>& vi, list<int>& li)	// revised example from _algo.pred_
 {
 
 	typedef list<int>::iterator LI;
