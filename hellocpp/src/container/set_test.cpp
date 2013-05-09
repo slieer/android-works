@@ -83,7 +83,7 @@ static void getRand() //this function is used to catch a letter randomization
 
 static void checkInput(char userInput, string str) //the function is used to check the character whether is correct
 		{
-	for (int i = 0; i < str.length(); i++) {
+	for (unsigned int i = 0; i < str.length(); i++) {
 		if (userInput == str[i]) {
 			cout << "Right!" << endl;
 			inside.insert(userInput); //save data in the inside vector

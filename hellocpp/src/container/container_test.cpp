@@ -24,6 +24,7 @@
  */
 
 int vector_main_1();
+void set_main_();
 class ContainerTest{
 public :
 	static void vector_test(){
