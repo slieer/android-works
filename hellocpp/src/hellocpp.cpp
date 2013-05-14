@@ -12,20 +12,24 @@
 #include "com.cplusplus/test_cplusplus.cpp"
 #include "com.stroustrup/test.cpp"
 #include "container/container_test.cpp"
+#include "a-basic/ABasic.cpp"
 
 using namespace std;
 static void basic_test();
 static void testComCPlusPlus();
 static void testStroustrup();
 static void testContainer();
+static void aBasicTest();
 
 #define TEST_THIS  1
 int main() {
 	int flag = TEST_THIS;
 	if(flag == 1){
 		//正在做的测试
-		testContainer();
+		aBasicTest();
 	}else{
+		//4、
+		testContainer();
 		//3、
 		testStroustrup();
 		//2、接着测试过的
@@ -33,6 +37,12 @@ int main() {
 		//1、先测试过的
 		basic_test();
 	}
+}
+
+static void aBasicTest(){
+	ABasic a;
+	a.test_construct();
+
 }
 
 static void testContainer(){
