@@ -1,6 +1,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+#include<sys/types.h>
+#include<sys/timeb.h>
 
 /**
  * http://www.32133.com/labrary/98.html

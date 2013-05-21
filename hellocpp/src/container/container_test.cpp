@@ -23,12 +23,25 @@
  stack
  */
 
-int vector_main_1();
+int list_main_0();
+int list_main_1();
+int map_main_();
 void set_main_();
+int vector_main_1();
+
 class ContainerTest{
 public :
 	static void test(){
 
+	}
+
+	static void list_test(){
+		list_main_0();
+		list_main_1();
+	}
+
+	static void map_test(){
+		map_main_();
 	}
 
 	static void vector_test(){
