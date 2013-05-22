@@ -26,8 +26,10 @@ int main() {
 	int flag = TEST_THIS;
 	if(flag == 1){
 		//正在做的测试
-		aBasicTest();
+		UtilsTest.testSort();
 	}else{
+		//5
+		aBasicTest();
 		//4、
 		testContainer();
 		//3、

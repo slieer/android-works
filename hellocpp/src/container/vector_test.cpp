@@ -8,11 +8,12 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
+#include <algorithm>
+
 using namespace std;
 //using std::vector;
 
 static vector<int> vector_init();
-static void append(vector<int> v, int val);
 int vector_main_1() {
 	//clock_t t = clock();
 	vector<int> ve = vector_init();
@@ -31,6 +32,8 @@ int vector_main_1() {
 	    cout << ' ' << *it;
 	}
 	cout << endl;
+
+	sort(ve.begin(),ve.end());
 	return 0;
 }
 
