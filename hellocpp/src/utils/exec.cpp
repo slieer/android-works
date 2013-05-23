@@ -9,7 +9,9 @@
 #include <cstdlib>     /* system, NULL, EXIT_FAILURE */
 #include <unistd.h>
 
-int exec_main() {
+namespace exec {
+
+int execute_main() {
 	int i;
 	printf("Checking if processor is available...");
 	if (system(NULL))
@@ -24,7 +26,7 @@ int exec_main() {
 	return 0;
 }
 
-int execl_main_() {
+int execl_main_1() {
 	char args[] = " -l";
 	execl("/bin/ls", "ls", "-al", "/etc/", NULL);
 	return 0;
@@ -35,4 +37,5 @@ int execl_main_() {
  * execv将命令行参数作为C字符串数组来传递(是一个指向以\0结尾的字符串数组的以"NULL"结尾的指针数组中的一个指针)
  * execle 和execve则是多了环境变量.   execve是内核中的实际调用
  */
+}
 

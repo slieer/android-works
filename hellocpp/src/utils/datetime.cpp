@@ -9,34 +9,34 @@
  */
 class DateTimeTest {
 public:
-	void timeTest(void) {
+	static void timeTest(void) {
 		long i = 10000000L;
 		clock_t start, finish;
 		double duration;
 		/* 测量一个事件持续的时间*/
 		printf("Time to do %ld empty loops is ", i);
 		start = clock();
-		while (i--)
-			;
+		while (i--);
 		finish = clock();
 		duration = (double) (finish - start) / CLOCKS_PER_SEC;
 		printf("%f seconds\n", duration);
-		system("pause");
+		//system("pause");
 	}
 
-	void ftimeTest(void) {
+	static void ftimeTest(void) {
+		long i = 10000000L;
 		struct timeb fStartTime;
 		struct timeb fEndTime;
 
 		ftime(&fStartTime);
-		//work...
+		while (i--);
 		ftime(&fEndTime);
 
 		float temp = (float) (fEndTime.time - fStartTime.time);
 
 		float temp1 = (float) (fEndTime.millitm - fStartTime.millitm) * 0.001;
 		double dbTotalProcessTime = (float) (temp + temp1);
-
+		printf("%f seconds\n", dbTotalProcessTime);
 	}
 };
 

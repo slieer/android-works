@@ -4,7 +4,7 @@ void virtual_test();
 void miscellaneous();
 class ABasic {
 public:
-	void test_construct() {
+	static void test_construct() {
 		//test_construct_init();
 		virtual_test();
 		miscellaneous();

@@ -4,6 +4,7 @@
 #include <list>
 #include <functional>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 class OrderTest{
@@ -29,6 +30,7 @@ public:
 
 		for (int n = 0; n < 6; n++)
 			printf("%d ", values[n]);
+		printf("\n");
 		return 0;
 	}
 
@@ -45,7 +47,13 @@ public:
 		ve.push_back(-1);
 
 		//functional: less<Type>（升序）、greater<Type>（降序）
-		sort(ve.begin(),ve.end(), less<int>());//
+		sort(ve.begin(),ve.end(), less<int>());
+
+		for (vector<int>::iterator it = ve.begin(); it != ve.end(); ++it){
+		    cout << ' ' << *it;
+		}
+		cout << endl;
+
 	}
 
 };

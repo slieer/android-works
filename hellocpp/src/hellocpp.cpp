@@ -13,6 +13,7 @@
 #include "com.stroustrup/test.cpp"
 #include "container/container_test.cpp"
 #include "a-basic/ABasic.cpp"
+#include "utils/utils_test.cpp"
 
 using namespace std;
 static void basic_test();
@@ -26,7 +27,7 @@ int main() {
 	int flag = TEST_THIS;
 	if(flag == 1){
 		//正在做的测试
-		UtilsTest.testSort();
+		UtilsTest::test();
 	}else{
 		//5
 		aBasicTest();
@@ -42,8 +43,7 @@ int main() {
 }
 
 static void aBasicTest(){
-	ABasic a;
-	a.test_construct();
+	ABasic::test_construct();
 
 }
 
@@ -53,38 +53,36 @@ static void testContainer(){
 }
 
 static void testStroustrup(){
-	Test t;
 	int swit = 1;
 	swit = 5;
 	switch(swit){
 	case 1 :
-		t.test_chapter2();
+		Test::test_chapter2();
 		break;
 	case 2 :
-		t.test_chapter5();
+		Test::test_chapter5();
 		break;
 	case 3 :
 		//四则运算字符串计算
-		t.test_chapter6();
+		Test::test_chapter6();
 		break;
 	case 4 :
 		//dc namespace
-		t.test_chapter8();
+		Test::test_chapter8();
 		break;
 	case 5 :
-		t.test_Chapter11();
+		Test::test_Chapter11();
 		break;
 	case 6 :
-		t.test_Chapter18();
+		Test::test_Chapter18();
 		break;
 	case 7 :
-		t.test_AppendixC();
+		Test::test_AppendixC();
 		break;
 	}
 }
 
 static void testComCPlusPlus(){
-	TestCPlus t;
 	int swit = 1;
 	swit = 2;
 	swit = 3;
@@ -93,24 +91,24 @@ static void testComCPlusPlus(){
 	switch(swit){
 	case 1 :
 		//cpp new的三种方式
-		t.test_dynamic();
+		TestCPlus::test_dynamic();
 		break;
 	case 2 :
 		//class定义和实例方法实现分离，命名空间的使用
-		t.test_classes();
+		TestCPlus::test_classes();
 		break;
 	case 3 :
 		//加号的重载, this, 及指针
-		t.test_classes1();
+		TestCPlus::test_classes1();
 		break;
 
 	case 4 :
 		//struct使用
-		t.test_structres();
+		TestCPlus::test_structres();
 		break;
 	case 5 :
 		/*虚函数，纯虚函数*/
-		t.test_polymorphism();
+		TestCPlus::test_polymorphism();
 		break;
 	}
 }
