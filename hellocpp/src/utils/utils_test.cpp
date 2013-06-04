@@ -14,12 +14,16 @@ public:
 	}
 
 	static void testDatetime(){
-		//DateTimeTest::ftimeTest();
-		DateTimeTest::timeTest();
+		DateTimeTest::ftimeTest();
+		//DateTimeTest::timeTest();
 	}
 
 	static void testSort(){
 		OrderTest::sort_bsearch();
 		OrderTest::sort_vector();
+	}
+
+	static void testString(){
+
 	}
 };

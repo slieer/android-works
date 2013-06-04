@@ -1,0 +1,62 @@
+<project name="osgi-study-example5" default="compile" basedir=".">
+    <property name="project.name" value="example5" />
+
+    <property name="src" location="../../../src/main/${project.name}" />
+    <property name="build" location="../../../build/${project.name}" />
+    <property name="dist" location="../../../dist" />
+
+    <property name="build.lib.dir" 
+    	location="D:/devTools/apache-felix/felix-framework-4.2.1/bin" />
+	
+	<property name="build.lib.bundle"
+	    location="D:/devTools/apache-felix/felix-framework-4.2.1/bundle" />
+
+    <target name="init">
+        <tstamp />
+        <mkdir dir="${build}" />
+        <mkdir dir="${dist}" />
+    </target>
+
+    <target name="compile" depends="init" description="compile the source ">
+         <!-- 
+         <echo message="${src}" />
+         <echo message="${build}" />
+          -->
+        <javac srcdir="${src}" debug="on" encoding="utf-8" destdir="${build}">
+            <classpath>
+                <fileset dir="${build.lib.dir}">
+                    <include name="**/*.jar" />
+                </fileset>
+                <fileset dir="${build.lib.bundle}">
+                    <include name="**/*.jar" />
+                </fileset>
+                <fileset dir="../../../dist/">
+                    <include name="**/*.jar" />
+                </fileset>
+            </classpath>
+        </javac>
+        <!-- copy properties files -->
+        <copy todir="${build}">
+            <fileset dir="./resources"></fileset>
+        </copy>
+
+    </target>
+
+    <target name="dist" depends="compile" description="generate the distribution">
+        <!-- 
+        <echo message="${build}/META-INF" />
+         -->
+        <mkdir dir="${dist}" />
+
+    	<jar destfile="${dist}/${project.name}.jar"
+            manifest="${build}/META-INF/manifest.mf">
+            <fileset dir="${build}"/>
+        </jar>
+    </target>
+    
+    <target name="clean" description="clean up">
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build}" />
+        <delete dir="${dist}" />
+    </target>
+</project>
