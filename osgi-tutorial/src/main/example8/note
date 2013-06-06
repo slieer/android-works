@@ -1,0 +1,4 @@
+The Service Binder is no longer under active development, 
+but this example is kept in the tutorial for historical purposes. 
+New projects should consider using one of the other dependency injection technologies
+ (e.g., Declarative Services, Dependency Manager, or iPOJO).]()
