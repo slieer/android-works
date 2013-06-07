@@ -1,9 +1,8 @@
 package com.androidbook.salbcr;
 
-import android.content.Context;
-import android.content.Intent;
 import android.app.IntentService;
 import android.app.Service;
+import android.content.Intent;
 
 public abstract class ALongRunningNonStickyBroadcastService 
 extends IntentService
