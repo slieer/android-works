@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\chapterTest\\StockQuoteService\\src\\com\\androidbook\\stockquoteservice\\IStockQuoteService.aidl
+ * Original file: E:\\BorqsWorkspace\\workspace\\github\\works\\ProAndroid4_Ch15_Services\\StockQuoteService\\src\\com\\androidbook\\stockquoteservice\\IStockQuoteService.aidl
  */
 package com.androidbook.stockquoteservice;
 public interface IStockQuoteService extends android.os.IInterface
@@ -23,13 +23,13 @@ public static com.androidbook.stockquoteservice.IStockQuoteService asInterface(a
 if ((obj==null)) {
 return null;
 }
-android.os.IInterface iin = (android.os.IInterface)obj.queryLocalInterface(DESCRIPTOR);
+android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
 if (((iin!=null)&&(iin instanceof com.androidbook.stockquoteservice.IStockQuoteService))) {
 return ((com.androidbook.stockquoteservice.IStockQuoteService)iin);
 }
 return new com.androidbook.stockquoteservice.IStockQuoteService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -62,7 +62,7 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return mRemote;
 }
@@ -70,7 +70,7 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public double getQuote(java.lang.String ticker) throws android.os.RemoteException
+@Override public double getQuote(java.lang.String ticker) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

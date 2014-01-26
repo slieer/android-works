@@ -19,7 +19,7 @@ public class BackgroundService extends Service
     public void onCreate() {
         super.onCreate();
 
-        Log.v(TAG, "in onCreate()");
+        Log.i(TAG, "in onCreate()");
         notificationMgr =(NotificationManager)getSystemService(
                NOTIFICATION_SERVICE);
         displayNotificationMessage("Background Service is running");
@@ -29,7 +29,7 @@ public class BackgroundService extends Service
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
         int counter = intent.getExtras().getInt("counter");
-        Log.v(TAG, "in onStartCommand(), counter = " + counter +
+        Log.i(TAG, "in onStartCommand(), counter = " + counter +
         		", startId = " + startId);
 
         new Thread(myThreads, new ServiceWorker(counter), "BackgroundService")
@@ -49,20 +49,22 @@ public class BackgroundService extends Service
 	        final String TAG2 = "ServiceWorker:" + Thread.currentThread().getId();
             // do background processing here...
             try {
-				Log.v(TAG2, "sleeping for 10 seconds. counter = " + counter);
-				Thread.sleep(10000);
-				Log.v(TAG2, "... waking up");
+				Log.i(TAG2, "sleeping for 10 seconds. counter = " + counter);
+				Thread.sleep(3000);
+				Log.i(TAG2, "... waking up");
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
-				Log.v(TAG2, "... sleep interrupted");
+				Log.i(TAG2, "... sleep interrupted");
 			}
+            
+            MainActivity.hand.sendEmptyMessage(0);
         }
     }
 
     @Override
     public void onDestroy()
     {
-        Log.v(TAG, "in onDestroy(). Interrupting threads and cancelling notifications");
+        Log.i(TAG, "in onDestroy(). Interrupting threads and cancelling notifications");
         myThreads.interrupt();
         notificationMgr.cancelAll();
         super.onDestroy();
@@ -70,7 +72,7 @@ public class BackgroundService extends Service
 
     @Override
     public IBinder onBind(Intent intent) {
-        Log.v(TAG, "in onBind()");
+        Log.i(TAG, "in onBind()");
         return null;
     }
 

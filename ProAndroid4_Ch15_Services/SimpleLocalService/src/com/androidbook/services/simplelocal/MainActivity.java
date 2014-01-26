@@ -4,8 +4,11 @@ package com.androidbook.services.simplelocal;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends Activity
 {
@@ -17,12 +20,14 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        hand = new MyHandler(this);
     }
 
     public void doClick(View view) {
         switch(view.getId()) {
         case R.id.startBtn:
-            Log.v(TAG, "Starting service... counter = " + counter);
+            Log.i(TAG, "Starting service... counter = " + counter);
             Intent intent = new Intent(MainActivity.this,
                     BackgroundService.class);
             intent.putExtra("counter", counter++);
@@ -34,12 +39,12 @@ public class MainActivity extends Activity
     }
 
     private void stopService() {
-    	Log.v(TAG, "Stopping service...");
+    	Log.i(TAG, "Stopping service...");
         if(stopService(new Intent(MainActivity.this,
                     BackgroundService.class)))
-        	Log.v(TAG, "stopService was successful");
+        	Log.i(TAG, "stopService was successful");
         else
-        	Log.v(TAG, "stopService was unsuccessful");
+        	Log.i(TAG, "stopService was unsuccessful");
     }
 
     @Override
@@ -47,5 +52,27 @@ public class MainActivity extends Activity
     {
     	stopService();
         super.onDestroy();
+    }
+    
+    public static MyHandler hand = null;
+    
+    /**
+     * @author slieer 2013-6-13
+     */
+    public static class MyHandler extends Handler{
+        Activity act;
+        public MyHandler(Activity act){
+            this.act = act;
+        }
+        public void handleMessage(Message msg) {
+            Button b = (Button)act.findViewById(R.id.startBtn);
+            String val = b.getText().toString();
+            Log.i(TAG, "val.equals start ?" + val.equals("start"));
+            if(val.equals("Start")){
+                b.setText("Start Service");
+            }else{
+                b.setText("Start");
+            }
+        };
     }
 }

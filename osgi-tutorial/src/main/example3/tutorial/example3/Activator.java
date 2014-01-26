@@ -37,7 +37,7 @@ public class Activator implements BundleActivator {
 
                     // If the user entered a blank line, then
                     // exit the loop.
-                    if (word.length() == 0) {
+                    if (word == null || word.length() == 0) {
                         break;
                     }
 
@@ -55,6 +55,7 @@ public class Activator implements BundleActivator {
                     context.ungetService(refs[0]);
                 }
             } catch (IOException ex) {
+                ex.printStackTrace();
             }
         } else {
             System.out.println("Couldn't find any dictionary service...");

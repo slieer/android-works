@@ -82,14 +82,14 @@ Toast.LENGTH_SHORT).show();
         @Override
         public void onServiceConnected(ComponentName name, IBinder service)
         {
-            Log.v(TAG, "onServiceConnected() called");
+            Log.i(TAG, "onServiceConnected() called");
             stockService = IStockQuoteService.Stub.asInterface(service);
             callService();
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            Log.v(TAG, "onServiceDisconnected() called");
+            Log.i(TAG, "onServiceDisconnected() called");
         	stockService = null;
         }
     };
